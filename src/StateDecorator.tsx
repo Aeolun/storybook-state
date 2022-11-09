@@ -9,7 +9,7 @@ export default makeDecorator({
     if (parameters && parameters.store) {
       return (
         <State store={parameters.store} parseState={parameters.parseState}>
-          {storyFn(context)}
+          {storyFn(context) as React.ReactElement}
         </State>
       );
     }

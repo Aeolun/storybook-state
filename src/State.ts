@@ -1,17 +1,18 @@
 import React, { Component, cloneElement } from "react";
-import PropTypes from "prop-types";
+import Store from "./Store";
 
-export default class State extends Component {
-    static propTypes = {
-        children: PropTypes.node,
-        parseState: PropTypes.func,
-        store: PropTypes.object
-    };
+export default class State extends Component<{
+    store: Store;
+    parseState?: (state: any) => any;
+    children: React.ReactElement | ((state: any) => React.ReactElement);
+}, any> {
+    stateStore: Store
+    subscription: string
 
     constructor(props) {
         super(props);
 
-        this.stateStore = this.props.store;
+        this.stateStore = props.store;
         this.state = this.stateStore.state;
     }
 
@@ -42,6 +43,10 @@ export default class State extends Component {
             return this.props.children.map((child, index) =>
                 cloneElement(child, state)
             );
+        }
+
+        if (typeof this.props.children === 'string' || typeof this.props.children === 'number' || typeof this.props.children === 'boolean') {
+            return this.props.children
         }
 
         return cloneElement(this.props.children, state);

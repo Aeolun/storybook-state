@@ -1,15 +1,13 @@
 # Storybook state
 
-### Warning
-
-**Storybook recently introduced a new way of building addons, the latest version of storybook-state will work with version of storybook > `v5.2.*`. For older versions of storybook use `v1.3.6` of this addon.**
-
----
+Note
+--
+This repository is a direct copy of https://github.com/Sambego/storybook-state but with updated dependencies. No other functionality was changed (unless necessary to retain functionality). All credit goes to the original author.
 
 ### Getting Started
 
 ```sh
-npm install --save-dev @sambego/storybook-state
+npm install --save-dev @aeolun/storybook-state
 ```
 
 First you will need to create a new store, to save the state and handle updates.
@@ -24,7 +22,7 @@ When clicking on the button we will update the store, which in turn will update 
 ```js
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { State, Store } from "@sambego/storybook-state";
+import { State, Store } from "@aeolun/storybook-state";
 
 const store = new Store({
   active: false
@@ -48,7 +46,7 @@ export const Simple = () => SimpleModal;
 ```js
 import React from "react";
 import { addDecorator, addParameters } from "@storybook/react";
-import { Store, withState } from "@sambego/storybook-state";
+import { Store, withState } from "@aeolun/storybook-state";
 
 const SimpleCounter = props => {
   return [
