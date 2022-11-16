@@ -4,7 +4,7 @@
     "module": "commonjs",
     "outDir": "dist/",
     "jsx": "react-jsx",
-    "esModuleInterop": true,
+    "esModuleInterop": true
   },
   "include": ["src"]
 }

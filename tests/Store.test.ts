@@ -1,3 +1,4 @@
+import {expect, test} from '@jest/globals';
 import Store from "../src/Store";
 
 test("create a store", () => {

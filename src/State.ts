@@ -4,7 +4,7 @@ import Store from "./Store";
 export default class State extends Component<{
     store: Store;
     parseState?: (state: any) => any;
-    children: React.ReactElement | ((state: any) => React.ReactElement);
+    children?: React.ReactElement | ((state: any) => React.ReactElement);
 }, any> {
     stateStore: Store
     subscription: string

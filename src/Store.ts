@@ -1,4 +1,4 @@
-import uuid from "uuid";
+import { v4 } from "uuid";
 
 export default class Store {
   state = {};
@@ -22,7 +22,7 @@ export default class Store {
   }
 
   subscribe(callback) {
-    const subscription = uuid();
+    const subscription = v4();
 
     this.callbacks.push({ subscription, callback });
 
