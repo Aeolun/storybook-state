@@ -1,6 +1,6 @@
 {
   "name": "@aeolun/storybook-state",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "description": "Manage state in storybook stories",
   "main": "dist/index.js",
   "scripts": {
